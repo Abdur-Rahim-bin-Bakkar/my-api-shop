@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
-const ModeCard = ({ model }) => {
+const ModeCard = ({ model,addAi,setAddAi }) => {
     const [sebs, setSubs] = useState(false)
     const addCard = () => {
-        setSubs(true)
-        toast.success(`successfully added ${model.title} for $ ${model.price} Dollar`)
+        if(!addAi.find(ai=> ai.id === model.id)){
+            setAddAi([...addAi, model])
+            setSubs(true)
+            
+            toast.success(`successfully added ${model.title} for $ ${model.price} Dollar`)
+        }
+        else if(addAi.find(ai=> ai.id === model.id)){
+            toast.error("Item already in cart!")
+        }
     }
     return (
         <div className='card shadow'>
