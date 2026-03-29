@@ -1,12 +1,13 @@
 import React from 'react';
 
-const Tebs = () => {
+const Tebs = ({ tab, setTab }) => {
     return (
         <div>
             {/* name of each tab group should be unique */}
             <div className="tabs tabs-box justify-center bg-transparent gap-3">
-                <input type="radio" name="my_tabs_1" className="tab w-40 rounded-full" aria-label="Tab 1" defaultChecked />
-                <input type="radio" name="my_tabs_1" className="tab w-40 rounded-full" aria-label="Tab 2"  />
+                <input onClick={()=> setTab(true)}  type="radio" name="my_tabs_1" className={`tab w-40 rounded-full ${tab && 'bg-[#fb2c36] text-white font-bold'}`} aria-label="Models"  />
+
+                <input onClick={()=> setTab(false)} type="radio" name="my_tabs_1" className={`tab w-40 rounded-full ${tab || 'bg-[#fb2c36] text-white' } font-bold`} aria-label="Cart" />
             </div>
         </div>
     );
