@@ -6,6 +6,7 @@ import Tebs from './components/Tabs/Tebs'
 import Model from './components/Models.jsx/Model'
 import { ToastContainer } from 'react-toastify'
 import MyCard from './components/MyCards.jsx/MyCard'
+import Footer from './components/Footer/Footer'
 
 const data = fetch('/models.json').then(res => res.json())
 function App() {
@@ -28,7 +29,7 @@ function App() {
         tab|| <MyCard addAi={addAi} setAddAi={setAddAi}></MyCard>
       }
 
-
+      <Footer></Footer>
     <ToastContainer></ToastContainer>
     </>
   )
