@@ -29,6 +29,7 @@ const Hero = () => {
                     src={hero}
                     className="max-w-sm rounded-lg  flex-1"
                 />
+                
             </div>
         </div>
     );
